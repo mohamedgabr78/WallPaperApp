@@ -1,18 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradientbg"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/searchlayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittextbg"
+            android:hint="Search for any image"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="-50dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:src="@drawable/ic_baseline_search_24"
+            android:tint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchlayout"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+    <LinearLayout
+        android:layout_below="@+id/bottomlayout"
+        android:id="@+id/elementslayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal" >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:id="@+id/nature"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="10dp" >
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:text="Nature"
+                  android:paddingRight="20dp"
+                  android:paddingTop="15dp"
+                  android:textColor="@color/white"
+                  android:background="@drawable/gradientnature"
+                  android:gravity="end"
+                  android:textStyle="bold"
+                  android:textSize="15sp"
+                  />
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/nature"
+                    android:layout_marginLeft="10dp"
+
+            </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/nature"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="10dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="trending"
+                android:paddingRight="20dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/gradienttrending"
+                android:gravity="end"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                />
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:src="@drawable/trending"
+                android:layout_marginLeft="10dp"
+
+        </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerview"
+        android:layout_below="@+id/elementslayout"
+        android:paddingTop="5dp"
+    </RelativeLayout>
